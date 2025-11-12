@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biatlon Letohrad – Interaktivní mapa</title>
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Styl -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="main-container">
+    <!-- 🟦 Boční panel -->
+    <aside id="sidebar">
+      <header>
+        <div class="header-text">
+          <h1>Biatlon Letohrad</h1>
+          <p>Interaktivní mapa areálu</p>
+        </div>
+      </header>
+
+      <div class="sidebar-content">
+        <h3>Trasy</h3>
+        <label><input type="checkbox" id="komplet"> Komplet</label><br>
+        <label><input type="checkbox" id="hornikolo"> Kolo 1</label><br>
+        <label><input type="checkbox" id="dolnikolo"> Kolo 2</label><br>
+        <label><input type="checkbox" id="novekolo"> Kolo 3</label><br>
+        <button id="resetView">Zpět na areál</button>
+      </div>
+
+      <!-- 🔵 Logo dole -->
+      <div class="sidebar-logo">
+        <img src="logo.png" alt="Logo Biatlon Letohrad" />
+      </div>
+    </aside>
+
+    <!-- 🗺️ Mapový kontejner -->
+    <div id="map-container">
+      <div id="map"></div>
+    </div>
+  </div>
+
+  <div id="profileContainer" style="height: 250px; display: none;">
+    <canvas id="elevationChart"></canvas>
+  </div>
+  
+
+  <!-- Skript až po HTML -->
+  <script src="script.js"></script>
+</body>
+</html>
